@@ -70,6 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5205de743dbae14cb67a5de6b56bec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Overworld
-  playerPosition: {x: 0, y: -5.5}
+  sceneToLoad: HouseInterior
+  playerPosition: {x: 0, y: -4}
+  fadePanel: {fileID: 7365430009883655026, guid: 5e622a8fcac3a5242be2839d84e9c18f,
+    type: 3}
   positionStorage: {fileID: 11400000, guid: 6c0dde2d541f99149a09ffc587f1250c, type: 2}
+  fadeWait: 0.33

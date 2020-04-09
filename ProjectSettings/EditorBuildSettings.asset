@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HouseInterior.unity
-    guid: 2c8b0f073bc7436438b2ffe11c0b7218
-  - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: 211cc3a1a92aa0848bae5aa90f683ccf
+  - enabled: 1
+    path: Assets/Scenes/HouseInterior.unity
+    guid: 2c8b0f073bc7436438b2ffe11c0b7218
   m_configObjects: {}
