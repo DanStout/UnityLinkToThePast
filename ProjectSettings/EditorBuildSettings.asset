@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HouseInterior.unity
+    guid: 2c8b0f073bc7436438b2ffe11c0b7218
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 211cc3a1a92aa0848bae5aa90f683ccf
+  m_configObjects: {}
