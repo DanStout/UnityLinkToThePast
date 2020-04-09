@@ -6,14 +6,8 @@ public class ContextClue : MonoBehaviour
 {
     public GameObject contextClue;
 
-    public void Enable()
+    public void ToggleClue()
     {
-        contextClue.SetActive(true);
+        contextClue.SetActive(!contextClue.activeSelf);
     }
-
-    public void Disable()
-    {
-        contextClue.SetActive(false);
-    }
-
 }
