@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
-    public Signal contextChanged;
     public GameObject dialogBox;
-    private Text text;
     public string dialog;
-    public bool inRange;
+
+    private Text text;
 
     void Start()
     {
@@ -32,22 +31,8 @@ public class Sign : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected override void OnPlayerLeave()
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            contextChanged.Raise();
-            inRange = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            contextChanged.Raise();
-            inRange = false;
-            dialogBox.SetActive(false);
-        }
+        dialogBox.SetActive(false);
     }
 }

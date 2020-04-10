@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState state;
     public Signal healthSignal;
     public VectorValue positionStorage;
+    public Inventory inventory;
+    public SpriteRenderer heldItemSprite;
 
     private Rigidbody2D body;
     private Vector3 change;
@@ -36,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (state == PlayerState.Interact)
+        {
+            return;
+        }
+
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -66,6 +73,22 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("attacking", false);
         yield return new WaitForSeconds(0.3f);
         state = PlayerState.Walk;
+    }
+
+    public void RaiseItem()
+    {
+        if (state == PlayerState.Interact)
+        {
+            anim.SetBool("receiveItem", false);
+            state = PlayerState.Idle;
+            heldItemSprite.sprite = null;
+        }
+        else
+        {
+            anim.SetBool("receiveItem", true);
+            state = PlayerState.Interact;
+            heldItemSprite.sprite = inventory.currentItem.sprite;
+        }
     }
 
     public void Knock(float knockTime, float damage)
