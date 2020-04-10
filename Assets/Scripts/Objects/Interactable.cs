@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public bool inRange;
+    protected bool inRange;
 
     public Signal contextChanged;
 
@@ -20,8 +20,7 @@ public abstract class Interactable : MonoBehaviour
             OnPlayerEnter();
         }
     }
-
-
+    
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)

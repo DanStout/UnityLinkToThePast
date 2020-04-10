@@ -7,12 +7,12 @@ public class TreasureChest : Interactable
 {
     public Inventory inventory;
     public Item contents;
-    public bool isOpen;
     public Signal raiseItem;
     public GameObject dialogBox;
 
-    private Text text;
-    private Animator anim;
+    bool isOpen;
+    Text text;
+    Animator anim;
 
     void Start()
     {
