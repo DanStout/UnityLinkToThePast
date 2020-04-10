@@ -9,10 +9,9 @@ public class RoomMove : MonoBehaviour
     public Vector3 playerChange;
     public string placeName;
     public GameObject text;
-    public Tilemap destinationTilemap;
 
-    private Vector2 cameraMin;
-    private Vector2 cameraMax;
+    public Transform newCameraMin;
+    public Transform newCameraMax;
 
     private CameraMovement cam;
     private Text placeText;
@@ -20,39 +19,24 @@ public class RoomMove : MonoBehaviour
     void Start()
     {
         cam = Camera.main.GetComponent<CameraMovement>();
-        placeText = text.GetComponent<Text>();
-
-        if (destinationTilemap != null)
+        if (text != null)
         {
-            destinationTilemap.CompressBounds();
-            var bnd = destinationTilemap.cellBounds;
-
-            var ySize = Camera.main.orthographicSize;
-            var xSize = ySize * Camera.main.aspect;
-
-            cameraMin = new Vector2(bnd.xMin + xSize, bnd.yMin + ySize);
-            cameraMax = new Vector2(bnd.xMax - xSize, bnd.yMax - ySize);
+            placeText = text.GetComponent<Text>();
         }
-    }
-
-    void Update()
-    {
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            cam.bottomLeft = cameraMin;
-            cam.topRight = cameraMax;
+            cam.min = newCameraMin;
+            cam.max = newCameraMax;
             other.transform.position += playerChange;
 
-            if (!string.IsNullOrWhiteSpace(placeName))
+            if (text != null && !string.IsNullOrWhiteSpace(placeName))
             {
                 StartCoroutine(placeNameCo());
             }
-
         }
     }
 
@@ -63,5 +47,4 @@ public class RoomMove : MonoBehaviour
         yield return new WaitForSeconds(4f);
         text.SetActive(false);
     }
-
 }

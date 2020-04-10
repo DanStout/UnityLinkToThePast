@@ -6,19 +6,31 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public float smoothing;
-    public Vector2 topRight;
-    public Vector2 bottomLeft;
+    public Transform min;
+    public Transform max;
+
+    private Camera cam;
+    private float xSize;
+    private float ySize;
 
     void Start()
     {
         transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        cam = GetComponent<Camera>();
+
+        ySize = cam.orthographicSize;
+        xSize = ySize * cam.aspect;
     }
 
     void LateUpdate()
     {
-        var targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
-        targetPos.x = Mathf.Clamp(targetPos.x, bottomLeft.x, topRight.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, bottomLeft.y, topRight.y);
+        var minP = min.position;
+        var maxP = max.position;
+
+        var x = Mathf.Clamp(target.position.x, minP.x + xSize, maxP.x - xSize);
+        var y = Mathf.Clamp(target.position.y, minP.y + ySize, maxP.y - ySize);
+
+        var targetPos = new Vector3(x, y, transform.position.z);
 
         if (transform.position != targetPos)
         {
