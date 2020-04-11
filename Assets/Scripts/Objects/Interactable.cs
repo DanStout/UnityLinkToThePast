@@ -6,37 +6,59 @@ public abstract class Interactable : MonoBehaviour
 {
     protected bool inRange;
 
-    public Signal contextChanged;
+    readonly List<ContextClue> activeContextClues = new List<ContextClue>();
+
+    protected virtual bool ShowContextClue()
+    {
+        return true;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (ShowContextClue())
+        {
+            var ctx = other.GetComponent<ContextClue>();
+            if (ctx != null)
+            {
+                activeContextClues.Add(ctx);
+                ctx.ShowClue();
+            }
+        }
+
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            if (ShowContextChanged())
-            {
-                contextChanged.Raise();
-            }
             inRange = true;
             OnPlayerEnter();
         }
     }
-    
-    void OnTriggerExit2D(Collider2D other)
+
+    protected void UpdateActiveContextClues(bool shown)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
+        foreach (var clue in activeContextClues)
         {
-            if (ShowContextChanged())
-            {
-                contextChanged.Raise();
-            }
-            inRange = false;
-            OnPlayerLeave();
+            clue.ShowClue(shown);
+        }
+
+        if (!shown)
+        {
+            activeContextClues.Clear();
         }
     }
 
-    protected virtual bool ShowContextChanged()
+    void OnTriggerExit2D(Collider2D other)
     {
-        return true;
+        var ctx = other.GetComponent<ContextClue>();
+        if (ctx != null)
+        {
+            activeContextClues.Remove(ctx);
+            ctx.ShowClue(false);
+        }
+
+        if (other.CompareTag("Player") && !other.isTrigger)
+        {
+            inRange = false;
+            OnPlayerLeave();
+        }
     }
 
     protected virtual void OnPlayerEnter()

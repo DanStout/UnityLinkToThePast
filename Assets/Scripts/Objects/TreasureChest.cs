@@ -20,23 +20,20 @@ public class TreasureChest : Interactable
         text = dialogBox.GetComponentInChildren<Text>();
     }
 
-    protected override bool ShowContextChanged()
+    protected override bool ShowContextClue()
     {
         return !isOpen;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && inRange)
+        if (inRange && Input.GetKeyDown(KeyCode.Space))
         {
             if (isOpen)
             {
-                if (inventory.currentItem != null)
-                {
-                    dialogBox.SetActive(false);
-                    inventory.currentItem = null;
-                    raiseItem.Raise();
-                }
+                dialogBox.SetActive(false);
+                inventory.currentItem = null;
+                raiseItem.Raise();
             }
             else
             {
@@ -47,8 +44,13 @@ public class TreasureChest : Interactable
                 raiseItem.Raise();
                 isOpen = true;
                 anim.SetBool("opened", true);
-                contextChanged.Raise();
+                UpdateActiveContextClues(false);
             }
         }
+    }
+
+    protected override void OnPlayerLeave()
+    {
+        dialogBox.SetActive(false);
     }
 }

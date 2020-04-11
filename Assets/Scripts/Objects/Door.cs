@@ -21,8 +21,8 @@ public class Door : Interactable
         if (Input.GetKeyDown(KeyCode.Space) && inRange && (DoorType == DoorType.Key && inventory.numberOfKeys > 0))
         {
             inventory.numberOfKeys--;
+            UpdateActiveContextClues(false);
             gameObject.transform.parent.gameObject.SetActive(false);
-            contextChanged.Raise();
         }
     }
 }

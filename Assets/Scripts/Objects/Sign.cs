@@ -19,7 +19,7 @@ public class Sign : Interactable
     {
         if (Input.GetKeyDown(KeyCode.Space) && inRange)
         {
-            if (dialogBox.activeInHierarchy)
+            if (dialogBox.activeSelf)
             {
                 dialogBox.SetActive(false);
             }

@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 6574496295755187532}
   - component: {fileID: 6574496295755187534}
   - component: {fileID: 6574496295755187529}
-  - component: {fileID: 1026968276}
   - component: {fileID: 1026968283}
   m_Layer: 0
   m_Name: Player
@@ -310,6 +309,8 @@ MonoBehaviour:
   state: 0
   healthSignal: {fileID: 11400000, guid: eca2a94e98e825544b571daf14e2c5e8, type: 2}
   positionStorage: {fileID: 11400000, guid: 6c0dde2d541f99149a09ffc587f1250c, type: 2}
+  inventory: {fileID: 11400000, guid: 5259cccf3fda53d489f0437f716a7b57, type: 2}
+  heldItemSprite: {fileID: 0}
 --- !u!95 &6574496295755187534
 Animator:
   serializedVersion: 3
@@ -355,33 +356,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50305593, y: 0.93328404}
   m_EdgeRadius: 0
---- !u!114 &1026968276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574496295755187520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0c867b48fd62942886e1d3cdc5003f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: a3a28719d86ce3d4b8e1f0e176eca576, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1026968283}
-        m_MethodName: ToggleClue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1026968283
 MonoBehaviour:
   m_ObjectHideFlags: 0

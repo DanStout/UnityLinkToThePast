@@ -6,8 +6,8 @@ public class ContextClue : MonoBehaviour
 {
     public GameObject contextClue;
 
-    public void ToggleClue()
+    public void ShowClue(bool shown = true)
     {
-        contextClue.SetActive(!contextClue.activeSelf);
+        contextClue.SetActive(shown);
     }
 }
