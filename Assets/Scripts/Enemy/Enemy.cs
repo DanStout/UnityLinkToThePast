@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    public GameObject deathEffect;
 
     protected Rigidbody2D body;
 
@@ -33,7 +34,17 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            Die();
             gameObject.SetActive(false);
+        }
+    }
+
+    void Die()
+    {
+        if (deathEffect != null)
+        {
+            var obj = GameObject.Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(obj, 1f);
         }
     }
 

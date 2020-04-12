@@ -169,9 +169,13 @@ MonoBehaviour:
   enemyName: Larry
   baseAttack: 1
   moveSpeed: 1.5
+  deathEffect: {fileID: 1849902006584475117, guid: 28aa64fafc6fb024583ca339ceec4ad3,
+    type: 3}
   chaseRadius: 4
   attackRadius: 1.2
+  patrolRadius: 0
   homePosition: {fileID: 0}
+  path: []
 --- !u!114 &8731723742424586661
 MonoBehaviour:
   m_ObjectHideFlags: 0
