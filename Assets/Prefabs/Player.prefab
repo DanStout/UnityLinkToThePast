@@ -308,6 +308,7 @@ MonoBehaviour:
   currentHealth: {fileID: 11400000, guid: 7b56396e2f6150a4bb27cae05317351c, type: 2}
   state: 0
   healthSignal: {fileID: 11400000, guid: eca2a94e98e825544b571daf14e2c5e8, type: 2}
+  screenKickSignal: {fileID: 11400000, guid: 839fa083ecaa9394e9b9b9c0be4266b2, type: 2}
   positionStorage: {fileID: 11400000, guid: 6c0dde2d541f99149a09ffc587f1250c, type: 2}
   inventory: {fileID: 11400000, guid: 5259cccf3fda53d489f0437f716a7b57, type: 2}
   heldItemSprite: {fileID: 0}

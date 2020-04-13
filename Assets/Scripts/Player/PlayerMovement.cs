@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public FloatValue currentHealth;
     public PlayerState state;
     public Signal healthSignal;
+    public Signal screenKickSignal;
     public VectorValue positionStorage;
     public Inventory inventory;
     public SpriteRenderer heldItemSprite;
@@ -95,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (state != PlayerState.Stagger)
         {
+            screenKickSignal.Raise();
             currentHealth.runtimeValue -= damage;
             healthSignal.Raise();
             if (currentHealth.runtimeValue > 0)

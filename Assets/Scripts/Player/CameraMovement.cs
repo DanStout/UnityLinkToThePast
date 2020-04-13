@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour
     public Transform min;
     public Transform max;
 
+    private Animator anim;
     private Camera cam;
     private float xSize;
     private float ySize;
@@ -17,6 +18,7 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
         cam = GetComponent<Camera>();
+        anim = GetComponent<Animator>();
 
         ySize = cam.orthographicSize;
         xSize = ySize * cam.aspect;
@@ -36,5 +38,10 @@ public class CameraMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, targetPos, smoothing);
         }
+    }
+
+    public void ScreenKick()
+    {
+        anim.SetTrigger("kick");
     }
 }

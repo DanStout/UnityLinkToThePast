@@ -10,6 +10,12 @@ public class Inventory : ScriptableObject
     public int numberOfKeys;
     public int coins;
 
+    void OnEnable()
+    {
+        coins = 0;
+        numberOfKeys = 0;
+    }
+
     public void AddItem(Item item)
     {
         if (item.isKey)
