@@ -13,12 +13,15 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState state;
+    public string enemyName;
+    public GameObject deathEffect;
+
+    [Header("Stats")]
     public FloatValue maxHealth;
     public float health;
-    public string enemyName;
     public int baseAttack;
     public float moveSpeed;
-    public GameObject deathEffect;
+
 
     protected Rigidbody2D body;
 

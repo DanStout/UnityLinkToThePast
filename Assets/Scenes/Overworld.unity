@@ -7010,6 +7010,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &226007301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226007303}
+  - component: {fileID: 226007302}
+  m_Layer: 0
+  m_Name: Rooms
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &226007302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226007301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f0ccf9e1facae41aa699760a50dbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 11400000, guid: 7a35edc78934c164ea1ced85fec9536e, type: 2}
+  - {fileID: 11400000, guid: 0e3d37bbfcf16de4b9a5e41cbbd800e0, type: 2}
+  - {fileID: 11400000, guid: 0b343c64e45a0a64589644750127cad3, type: 2}
+--- !u!4 &226007303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226007301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &426228983
 GameObject:
   m_ObjectHideFlags: 0
@@ -15199,6 +15246,12 @@ PrefabInstance:
       propertyPath: newCameraMax
       value: 
       objectReference: {fileID: 471885555}
+    - target: {fileID: 2407305121487830202, guid: abfb8d3dad1a70948b67ee769ccae6af,
+        type: 3}
+      propertyPath: newRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a35edc78934c164ea1ced85fec9536e,
+        type: 2}
     - target: {fileID: 2407305121487830203, guid: abfb8d3dad1a70948b67ee769ccae6af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15655,6 +15708,12 @@ PrefabInstance:
       propertyPath: newCameraMax
       value: 
       objectReference: {fileID: 894950435}
+    - target: {fileID: 2407305121487830202, guid: abfb8d3dad1a70948b67ee769ccae6af,
+        type: 3}
+      propertyPath: newRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b343c64e45a0a64589644750127cad3,
+        type: 2}
     - target: {fileID: 2407305121487830203, guid: abfb8d3dad1a70948b67ee769ccae6af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20767,6 +20826,12 @@ PrefabInstance:
       propertyPath: newCameraMax
       value: 
       objectReference: {fileID: 471885555}
+    - target: {fileID: 2407305121487830202, guid: abfb8d3dad1a70948b67ee769ccae6af,
+        type: 3}
+      propertyPath: newRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a35edc78934c164ea1ced85fec9536e,
+        type: 2}
     - target: {fileID: 2407305121487830203, guid: abfb8d3dad1a70948b67ee769ccae6af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28534,6 +28599,12 @@ PrefabInstance:
       propertyPath: max
       value: 
       objectReference: {fileID: 471885555}
+    - target: {fileID: 2124010925046023524, guid: ec7b3917757c4ff4c8af839198fec067,
+        type: 3}
+      propertyPath: initialRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a35edc78934c164ea1ced85fec9536e,
+        type: 2}
     - target: {fileID: 2124010925046023525, guid: ec7b3917757c4ff4c8af839198fec067,
         type: 3}
       propertyPath: orthographic size
@@ -28648,6 +28719,12 @@ PrefabInstance:
       propertyPath: newCameraMax
       value: 
       objectReference: {fileID: 1562218697}
+    - target: {fileID: 2407305121487830202, guid: abfb8d3dad1a70948b67ee769ccae6af,
+        type: 3}
+      propertyPath: newRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e3d37bbfcf16de4b9a5e41cbbd800e0,
+        type: 2}
     - target: {fileID: 2407305121487830203, guid: abfb8d3dad1a70948b67ee769ccae6af,
         type: 3}
       propertyPath: m_LocalPosition.x

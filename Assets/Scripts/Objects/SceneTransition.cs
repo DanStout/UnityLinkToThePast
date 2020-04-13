@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    [Header("New Scene Info")]
     public string sceneToLoad;
     public Vector2 playerPosition;
-    public GameObject fadePanel;
     public VectorValue positionStorage;
+
+    [Header("Fade")]
+    public GameObject fadePanel;
     public float fadeWait;
 
     void Awake()

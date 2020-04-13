@@ -7,11 +7,8 @@ using UnityEngine.UI;
 public class RoomMove : MonoBehaviour
 {
     public Vector3 playerChange;
-    public string placeName;
     public GameObject text;
-
-    public Transform newCameraMin;
-    public Transform newCameraMax;
+    public Room newRoom;
 
     private CameraMovement cam;
     private Text placeText;
@@ -29,11 +26,10 @@ public class RoomMove : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            cam.min = newCameraMin;
-            cam.max = newCameraMax;
+            cam.EnterRoom(newRoom);
             other.transform.position += playerChange;
 
-            if (text != null && !string.IsNullOrWhiteSpace(placeName))
+            if (text != null && !string.IsNullOrWhiteSpace(newRoom.displayName))
             {
                 StartCoroutine(placeNameCo());
             }
@@ -43,7 +39,7 @@ public class RoomMove : MonoBehaviour
     private IEnumerator placeNameCo()
     {
         text.SetActive(true);
-        placeText.text = placeName;
+        placeText.text = newRoom.displayName;
         yield return new WaitForSeconds(4f);
         text.SetActive(false);
     }
