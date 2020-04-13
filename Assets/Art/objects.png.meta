@@ -61,9 +61,9 @@ TextureImporter:
     21300112: objects_56
     21300114: objects_57
     21300116: objects_58
-    21300118: objects_59
-    21300120: objects_60
-    21300122: objects_61
+    21300118: coin_1
+    21300120: coin_2
+    21300122: coin_4
     21300124: objects_62
     21300126: objects_63
     21300128: objects_64
@@ -88,7 +88,7 @@ TextureImporter:
     21300166: objects_83
     21300168: objects_84
     21300170: objects_85
-    21300172: objects_86
+    21300172: coin_3
     21300174: objects_87
     21300176: objects_88
     21300178: objects_89
@@ -1047,10 +1047,10 @@ TextureImporter:
       name: objects_41
       rect:
         serializedVersion: 2
-        x: 2
-        y: 258
-        width: 11
-        height: 11
+        x: 0
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1067,10 +1067,10 @@ TextureImporter:
       name: objects_42
       rect:
         serializedVersion: 2
-        x: 19
-        y: 258
-        width: 10
-        height: 11
+        x: 16
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,10 +1087,10 @@ TextureImporter:
       name: objects_43
       rect:
         serializedVersion: 2
-        x: 36
-        y: 243
-        width: 9
-        height: 26
+        x: 32
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,10 +1107,10 @@ TextureImporter:
       name: objects_44
       rect:
         serializedVersion: 2
-        x: 51
-        y: 258
-        width: 10
-        height: 11
+        x: 48
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1404,13 +1404,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_59
+      name: coin_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 243
-        width: 11
-        height: 11
+        x: 0
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1424,13 +1424,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_60
+      name: coin_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 243
-        width: 10
-        height: 11
+        x: 16
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1444,13 +1444,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_61
+      name: coin_4
       rect:
         serializedVersion: 2
-        x: 51
-        y: 243
-        width: 10
-        height: 11
+        x: 48
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2707,10 +2707,10 @@ TextureImporter:
       name: objects_138
       rect:
         serializedVersion: 2
-        x: 7
-        y: 4
-        width: 120
-        height: 25
+        x: 64
+        y: 0
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2839,6 +2839,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8d3848250b76991469b61e498eee0e4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cedc60c421c364b9a8609fa6e9d97b
       vertices: []
       indices: 
       edges: []
