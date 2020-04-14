@@ -9,8 +9,8 @@ public class TreasureChest : Interactable
     public Item contents;
     public Signal raiseItem;
     public GameObject dialogBox;
+    public BoolValue isOpen;
 
-    bool isOpen;
     Text text;
     Animator anim;
 
@@ -18,22 +18,31 @@ public class TreasureChest : Interactable
     {
         anim = GetComponent<Animator>();
         text = dialogBox.GetComponentInChildren<Text>();
+
+        if (isOpen.runtimeValue)
+        {
+            anim.SetBool("opened", true);
+        }
     }
 
     protected override bool ShowContextClue()
     {
-        return !isOpen;
+        return !isOpen.runtimeValue;
     }
 
     void Update()
     {
         if (inRange && Input.GetKeyDown(KeyCode.Space))
         {
-            if (isOpen)
+            if (isOpen.runtimeValue)
             {
                 dialogBox.SetActive(false);
-                inventory.currentItem = null;
-                raiseItem.Raise();
+
+                if (inventory.currentItem != null)
+                {
+                    inventory.currentItem = null;
+                    raiseItem.Raise();
+                }
             }
             else
             {
@@ -42,7 +51,7 @@ public class TreasureChest : Interactable
                 inventory.AddItem(contents);
                 inventory.currentItem = contents;
                 raiseItem.Raise();
-                isOpen = true;
+                isOpen.runtimeValue = true;
                 anim.SetBool("opened", true);
                 UpdateActiveContextClues(false);
             }

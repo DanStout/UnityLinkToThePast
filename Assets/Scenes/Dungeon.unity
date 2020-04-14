@@ -8109,6 +8109,12 @@ PrefabInstance:
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 772423403}
+    - target: {fileID: 2880992274923589408, guid: 3abcaa73275eaeb40a008187b2ef11e2,
+        type: 3}
+      propertyPath: isOpen
+      value: 
+      objectReference: {fileID: 11400000, guid: ae9b92ef5abfc4842ae2e2907fe74918,
+        type: 2}
     - target: {fileID: 2880992274923589409, guid: 3abcaa73275eaeb40a008187b2ef11e2,
         type: 3}
       propertyPath: m_Name
