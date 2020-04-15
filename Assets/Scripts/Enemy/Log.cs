@@ -13,6 +13,8 @@ public class Log : Enemy
     public Transform[] path;
     private int curPathIdx;
 
+    public Collider2D bounds;
+
     private Transform target;
     private Animator anim;
     private bool onPatrol;
@@ -34,7 +36,8 @@ public class Log : Enemy
     {
         var dist = Vector3.Distance(target.position, transform.position);
 
-        if (dist <= chaseRadius && dist > attackRadius)
+        // If player is in range and we either are unbounded OR they're in our bounds:
+        if (dist <= chaseRadius && dist > attackRadius && (bounds == null || bounds.bounds.Contains(target.transform.position)))
         {
             if (state == EnemyState.Stagger || state == EnemyState.Attack)
             {
@@ -43,7 +46,8 @@ public class Log : Enemy
 
             MoveTowards(target.position);
         }
-        else if (dist > chaseRadius)
+        // Otherwise (player too far away, or are outside our bounds), either return to patrol OR go to sleep
+        else if (dist > chaseRadius || (bounds != null && !bounds.bounds.Contains(target.transform.position)))
         {
             if (onPatrol)
             {
