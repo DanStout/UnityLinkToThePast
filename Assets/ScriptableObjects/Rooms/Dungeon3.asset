@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e41931290383c154c86491055191f80b, type: 3}
-  m_Name: Dungeon2
+  m_Name: Dungeon3
   m_EditorClassIdentifier: 
-  displayName: Room 2
-  cameraMin: {x: -15, y: 14}
-  cameraMax: {x: 12, y: 28}
+  displayName: Room 3
+  cameraMin: {x: 11, y: 14}
+  cameraMax: {x: 32, y: 30}
