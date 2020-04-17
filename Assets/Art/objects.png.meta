@@ -26,7 +26,7 @@ TextureImporter:
     21300042: objects_21
     21300044: objects_22
     21300046: objects_23
-    21300048: objects_24
+    21300048: bullet_1
     21300050: objects_25
     21300052: objects_26
     21300054: objects_27
@@ -706,7 +706,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_24
+      name: bullet_1
       rect:
         serializedVersion: 2
         x: 260
@@ -2894,7 +2894,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

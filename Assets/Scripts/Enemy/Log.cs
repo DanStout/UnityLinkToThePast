@@ -9,6 +9,12 @@ public class Log : Enemy
     public float attackRadius;
     public float patrolRadius;
     public Transform homePosition;
+    public bool fireBullets;
+    public bool chasePlayer = true;
+    public float bulletDelay;
+    private float bulletDelayLeft;
+
+    public GameObject projectile;
 
     public Transform[] path;
     private int curPathIdx;
@@ -25,6 +31,14 @@ public class Log : Enemy
         target = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
         onPatrol = path.Length > 0;
+    }
+
+    void Update()
+    {
+        if (bulletDelayLeft > 0)
+        {
+            bulletDelayLeft -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -44,7 +58,19 @@ public class Log : Enemy
                 return;
             }
 
-            MoveTowards(target.position);
+            if (chasePlayer)
+            {
+                MoveTowards(target.position);
+            }
+            else if (fireBullets && bulletDelayLeft <= 0)
+            {
+                bulletDelayLeft = bulletDelay;
+                var temp = target.transform.position - transform.position;
+                var bullet = Instantiate(projectile, transform.position, Quaternion.identity);
+                bullet.GetComponent<Projectile>().Launch(temp);
+                state = EnemyState.Walk;
+                anim.SetBool("wakeUp", true);
+            }
         }
         // Otherwise (player too far away, or are outside our bounds), either return to patrol OR go to sleep
         else if (dist > chaseRadius || (bounds != null && !bounds.bounds.Contains(target.transform.position)))
