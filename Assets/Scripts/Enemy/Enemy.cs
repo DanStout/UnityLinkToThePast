@@ -15,20 +15,31 @@ public class Enemy : MonoBehaviour
     public EnemyState state;
     public string enemyName;
     public GameObject deathEffect;
+    public Signal signalDeactivated;
 
     [Header("Stats")]
     public FloatValue maxHealth;
     public float health;
     public int baseAttack;
     public float moveSpeed;
-
-
+   
     protected Rigidbody2D body;
+    private Vector2 startPosition;
+
+    void Awake()
+    {
+        health = maxHealth.initialValue;
+        startPosition = transform.position;
+    }
+
+    void OnEnable()
+    {
+        transform.position = startPosition;
+    }
 
     protected void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        health = maxHealth.initialValue;
     }
 
     public void Knock(float knockTime, float damage)
@@ -39,6 +50,7 @@ public class Enemy : MonoBehaviour
         {
             Die();
             gameObject.SetActive(false);
+            signalDeactivated.Raise();
         }
     }
 
@@ -46,7 +58,7 @@ public class Enemy : MonoBehaviour
     {
         if (deathEffect != null)
         {
-            var obj = GameObject.Instantiate(deathEffect, transform.position, Quaternion.identity);
+            var obj = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(obj, 1f);
         }
     }

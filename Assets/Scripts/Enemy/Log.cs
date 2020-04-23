@@ -8,7 +8,6 @@ public class Log : Enemy
     public float chaseRadius;
     public float attackRadius;
     public float patrolRadius;
-    public Transform homePosition;
     public bool fireBullets;
     public bool chasePlayer = true;
     public float bulletDelay;

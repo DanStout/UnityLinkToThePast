@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41931290383c154c86491055191f80b, type: 3}
-  m_Name: Dungeon1
+  m_Script: {fileID: 11500000, guid: 0c7a9de46b7e432489ecf1e7080210d0, type: 3}
+  m_Name: EnemyDeactivated
   m_EditorClassIdentifier: 
-  displayName: Dungeon Entrance
-  cameraMin: {x: -15, y: -7}
-  cameraMax: {x: 12, y: 14}
+  listeners: []

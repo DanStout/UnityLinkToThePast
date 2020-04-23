@@ -15,17 +15,21 @@ public class CameraMovement : MonoBehaviour
     private Vector2 min;
     private Vector2 max;
 
-    void Start()
+    void Awake()
     {
-        min = initialRoom.cameraMin;
-        max = initialRoom.cameraMax;
-
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
         cam = GetComponent<Camera>();
         anim = GetComponent<Animator>();
 
         ySize = cam.orthographicSize;
         xSize = ySize * cam.aspect;
+    }
+
+    void Start()
+    {
+        min = initialRoom.CameraMin;
+        max = initialRoom.CameraMax;
+
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
     }
 
     void LateUpdate()
@@ -43,8 +47,8 @@ public class CameraMovement : MonoBehaviour
 
     public void EnterRoom(Room room)
     {
-        min = room.cameraMin;
-        max = room.cameraMax;
+        min = room.CameraMin;
+        max = room.CameraMax;
     }
 
     public void ScreenKick()

@@ -164,18 +164,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  maxHealth: {fileID: 11400000, guid: 321ffa572853fda4bb95adfce77173e2, type: 2}
-  health: 2
   enemyName: Larry
-  baseAttack: 1
-  moveSpeed: 1.5
   deathEffect: {fileID: 1849902006584475117, guid: 28aa64fafc6fb024583ca339ceec4ad3,
     type: 3}
+  signalDeactivated: {fileID: 11400000, guid: 0182ad34542a53c4bbccc7dd1134ba85, type: 2}
+  maxHealth: {fileID: 11400000, guid: 321ffa572853fda4bb95adfce77173e2, type: 2}
+  health: 2
+  baseAttack: 1
+  moveSpeed: 1.5
   chaseRadius: 4
   attackRadius: 1.2
   patrolRadius: 0
-  homePosition: {fileID: 0}
+  fireBullets: 0
+  chasePlayer: 1
+  bulletDelay: 0
+  projectile: {fileID: 0}
   path: []
+  bounds: {fileID: 0}
 --- !u!114 &8731723742424586661
 MonoBehaviour:
   m_ObjectHideFlags: 0

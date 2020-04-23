@@ -18,7 +18,9 @@ public class Door : Interactable
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && inRange && (DoorType == DoorType.Key && inventory.numberOfKeys > 0))
+        if (Input.GetKeyDown(KeyCode.Space) &&
+            inRange &&
+            (DoorType == DoorType.Key && inventory.numberOfKeys > 0))
         {
             inventory.numberOfKeys--;
             UpdateActiveContextClues(false);
